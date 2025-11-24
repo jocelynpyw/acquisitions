@@ -8,7 +8,10 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "db:migrate": " drizzle-kit migrate",
+    "db:generate": " drizzle-kit generate",
+    "db:studio": " drizzle-kit studio"
   },
   "repository": {
     "type": "git",
@@ -24,11 +27,16 @@
   "homepage": "https://github.com/jocelynpyw/acquisitions#readme",
   "dependencies": {
     "@eslint/js": "^9.39.1",
+    "@neondatabase/serverless": "^1.0.2",
     "dotenv": "^17.2.3",
+    "drizzle-orm": "^0.44.7",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "express": "^5.1.0",
     "prettier": "^3.6.2"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.31.7"
   }
 }
