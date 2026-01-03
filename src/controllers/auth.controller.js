@@ -17,6 +17,10 @@ export const signup = async (req, res, next) => {
 
     const { email, name, password, role } = validationResult.data;
 
+    logger.info(
+      `Signing up user with email: ${email} , name: ${name}  password:${password} , role: ${role} `
+    );
+
     // AUTH SERVICE
 
     const user = await createUser({ name, email, password, role });

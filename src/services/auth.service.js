@@ -13,7 +13,7 @@ export const hashPassword = async password => {
   }
 };
 
-export const createUser = async (name, email, password, role = 'user') => {
+export const createUser = async ({ name, email, password, role = 'user' }) => {
   try {
     const existingUser = db
       .select()
