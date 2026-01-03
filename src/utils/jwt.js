@@ -1,5 +1,5 @@
 import logger from '#config/logger.js';
-import jwt, { verify } from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 
 const JWT_SECRET =
   process.env.JWT_SECRET ||
@@ -17,12 +17,12 @@ export const jwttocken = {
     }
   },
 
-  verify: token => {
-    try {
-      return verify(token, JWT_SECRET);
-    } catch (error) {
-      logger.error('Failed to authenticate token', error);
-      throw new Error('Failed to authenticate token');
-    }
-  },
+  //   verify: token => {
+  //     try {
+  //       return verify(token, JWT_SECRET);
+  //     } catch (error) {
+  //       logger.error('Failed to authenticate token', error);
+  //       throw new Error('Failed to authenticate token');
+  //     }
+  //   },
 };
