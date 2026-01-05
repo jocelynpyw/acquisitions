@@ -18,7 +18,6 @@ export const createUser = async ({ name, email, password, role = 'user' }) => {
     const existingUser = db
       .select()
       .from(users)
-      .from(users)
       .where(eq(users.email, email))
       .limit(1);
     if (existingUser.length > 0) {
