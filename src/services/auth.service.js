@@ -4,13 +4,7 @@ import { db } from '#config/database.js';
 import { eq } from 'drizzle-orm';
 import { users } from '#models/user.model.js';
 
-export const hashPassword = async password => {
-  try {
-    return await bcrypt.hash(password, 10);
-  } catch (error) {
-    logger.error('Error hashing the password:', error);
-    throw new Error('Error hashing ');
-  }
+
 };
 
 export const createUser = async ({ name, email, password, role = 'user' }) => {
