@@ -15,7 +15,7 @@ export const hashPassword = async password => {
 
 export const createUser = async ({ name, email, password, role = 'user' }) => {
   try {
-    const existingUser = db
+    const existingUser = await db
       .select()
       .from(users)
       .where(eq(users.email, email))
@@ -42,7 +42,6 @@ export const createUser = async ({ name, email, password, role = 'user' }) => {
         created_at: users.created_at,
       });
     logger.info(`New user created with email: ${email}`);
-
     return newUser;
   } catch (error) {
     logger.error('Error creating the user:', error);
