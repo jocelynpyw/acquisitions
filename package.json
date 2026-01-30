@@ -23,7 +23,7 @@
     "db:migrate": " drizzle-kit migrate",
     "db:generate": " drizzle-kit generate",
     "db:studio": " drizzle-kit studio",
-    "dev:docker": "sh scripts/dev.sh"
+    "dev:docker": "sh ./scripts/dev.sh"
   },
   "repository": {
     "type": "git",
